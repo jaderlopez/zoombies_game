@@ -1,17 +1,17 @@
 
 class Persona:
 
-    def __init__(self, nombre, calle=1):
+    def __init__(self, nombre):
         self.nombre = nombre
-        self.calle = calle
+        self.calle = 1
     
     def situacion(self):
         return "{}, estas en la calle {}".format(self.nombre, self.calle)
     
     def moverse(self, velocidad):
-        if velocidad == 1:
+        if velocidad == "1":
             self.calle += 1
-        elif velocidad == 2:
+        elif velocidad == "2":
             self.calle += 2
         else:
             self.calle +=3
