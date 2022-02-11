@@ -26,6 +26,7 @@ for i in range (10):
     z = Zombi()
     horda.append(z)
 
+
 while True:
 
     os.system("cls")
@@ -33,9 +34,11 @@ while True:
     print(jugador.situacion())
     print()
 
+
     calles = []
-    for zombi in horda:   
-        calles.append(Zombi().calle)
+    for zombi in horda:
+        zombi = Zombi().calle
+        calles.append(zombi)
     calles.sort()
     print("hay zombies en las calles: ")
     print()
@@ -54,9 +57,10 @@ while True:
 
 
     comido = False
-    for zombi in horda:
-        if Zombi().calle == jugador.calle:
-            perdiste = True
+    for zombi in calles:
+        if zombi == jugador.calle:
+            comido = True
+            
     
     if comido:
         print(""" 
@@ -71,12 +75,54 @@ while True:
     jugador.moverse(velocidad)
 
     for z in horda:
-        Zombi().moverse()
-    if z.eliminar_z():
+        Zombi().movimiento()
+    if Zombi().no_visible():
         horda.remove(z)
-        
+
+
+
+
+
+#/////////////////////////
+
+
+
+# horda = []
+# for z in range(10):
+#     z = Zombi()
+#     horda.append(z)
+
+# while True:
+
+#     calles = []
+#     for i in horda:
+#         i = Zombi().calle
+#         calles.append(i)
+#     calles.sort()
+#     print()
+#     print(jugador.situacion())
+#     print()
+#     print(""" en la calle hay mucho zoombi
+#     estan en las calles: """)
+#     print()
+#     print(calles, end=" ")
+#     print()
+
+#     movimiento = input("cuanto quieres moverte? (1/2/3)  ")
+#     jugador.moverse(movimiento)
+
+#     if jugador.calle > 40 :
+#         print("felicidades haz ganado")
+#         break
+
+#     for i in horda:
+#         if i == jugador.calle:
+#             print("te han comido amigo")
+#             break
+    
 
         
+
 
 
 
